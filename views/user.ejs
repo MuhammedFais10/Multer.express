@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="http://localhost:3000/submit"
+      enctype="multipart/form-data"
+      method="post"
+    >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="image">Image:</label>
+      <input type="file" id="file" name="file" required />
+
+      <button type="submit">Submit</button>
+    </form>
+    <ul>
+      <% users.forEach(user => { %>
+      <li>
+        <p><%= user.name %></p>
+
+        <img src="/uploads/<%= user.file %>" alt="" width="200" height="250" />
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
